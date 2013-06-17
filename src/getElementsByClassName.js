@@ -15,9 +15,8 @@ var getElementsByClassName = function (className) {
 			for (var i = 0; i < node.childNodes.length; i++) {
 				var child = node.childNodes[i];
 				if (child.classList) {
-					if (child.classList.contains(className)) {
-						res.push(child);
-					}
+					walkDOM(child);
+					child=child.nextSibling;
 				}
 			}
         }
